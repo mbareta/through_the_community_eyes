@@ -40,7 +40,11 @@ class CommunityEyesXBlock(XBlock):
         Create a fragment used to display the edit view in the Studio.
         """
         html_str = pkg_resources.resource_string(__name__, "static/html/studio_view.html")
-        frag = Fragment(unicode(html_str).format(display_name=self.display_name))
+        frag = Fragment(unicode(html_str).format(
+                                                    display_name=self.display_name,
+                                                    display_description=self.display_description,
+                                                    thumbnail_url=self.thumbnail_url
+                                                ))
         js_str = pkg_resources.resource_string(__name__, "static/js/src/studio_edit.js")
         frag.add_javascript(unicode(js_str))
         frag.initialize_js('StudioEdit')
@@ -52,6 +56,8 @@ class CommunityEyesXBlock(XBlock):
         Called when submitting the form in Studio.
         """
         self.display_name = data.get('display_name')
+        self.display_description = data.get('display_description')
+        self.thumbnail_url = data.get('thumbnail_url')
 
         return {'result': 'success'}
 

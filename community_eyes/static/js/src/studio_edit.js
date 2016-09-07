@@ -3,6 +3,8 @@ function StudioEdit(runtime, element) {
     var handlerUrl = runtime.handlerUrl(element, 'studio_submit');
     var data = {
       display_name: $(element).find('input[name=display_name]').val(),
+      display_description: $(element).find('input[name=display_description]').val(),
+      thumbnail_url: $(element).find('input[name=thumbnail_url]').val(),
     };
     runtime.notify('save', {state: 'start'});
     $.post(handlerUrl, JSON.stringify(data)).done(function(response) {

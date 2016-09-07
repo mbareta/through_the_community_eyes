@@ -1,13 +1,19 @@
-.xblock-render #description {
-  display: block;
+.xblock-render {
+  position: relative;
+  min-height: 400px;
 }
 
-#description {
-  display: none;
+.xblock-render #container,
+.xblock-render .expander-image {
+  height: 400px;
 }
 
-.xblock-render #container {
-  display: none;
+.xblock-render #container,
+.xblock-render .expander-trigger,
+.xblock-render .expander-image,
+.xblock-render .expander-text
+{
+  position: absolute;
 }
 
 #container {
