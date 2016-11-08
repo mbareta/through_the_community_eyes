@@ -17,6 +17,17 @@ function CommunityEyesXBlock(runtime, element) {
     });
 
     $(function ($) {
-        /* Here's where you'd do things on page load. */
+        $(window).on('resize', function(){
+            var windowAspectRatio = this.innerWidth/this.innerHeight;
+            var imageAspectRatio = 1.6;
+            var aspectRatioDelta = (windowAspectRatio - imageAspectRatio)/imageAspectRatio;
+
+            var imageStretch = 100 + aspectRatioDelta*100;
+
+            $('#container, .expander-image')
+                .css('background-size', '100% ' + imageStretch + '%')
+                .css('background-position', '0 ' + aspectRatioDelta*50 + '%');
+
+        });
     });
 }
