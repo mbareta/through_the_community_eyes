@@ -91,6 +91,7 @@
 .description {
   margin-left: 30px;
   font-size: 12px;
+  max-width: 70%;
 }
 
 #expander-one {
