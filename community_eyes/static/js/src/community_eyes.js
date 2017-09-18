@@ -50,10 +50,6 @@ function CommunityEyesXBlock(runtime, element) {
     }
 
     function applyClassIfZoomed($el, zoomLevel) {
-        if(zoomLevel >= 2) {
-            $el.addClass('zoomed');
-        } else {
-            $el.removeClass('zoomed');
-        }
+        zoomLevel >= 2 ? $el.addClass('zoomed') : $el.removeClass('zoomed');
     }
 }
