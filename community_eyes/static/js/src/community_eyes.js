@@ -1,6 +1,6 @@
 /* Javascript for CommunityEyesXBlock. */
 function CommunityEyesXBlock(runtime, element) {
-    
+
     $(window).on('resize', function () {
         var windowAspectRatio = this.innerWidth / this.innerHeight;
         var imageAspectRatio = 1.6;
@@ -20,7 +20,5 @@ function CommunityEyesXBlock(runtime, element) {
                 .css('background-size', imageStretch + '% 100%')
                 .css('background-position', '-' + aspectRatioDelta * 50 + '% 0');
         }
-
-
     });
 }
